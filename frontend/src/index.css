@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking-cursor {
+  animation: blink 2s infinite;
+  display: inline-block;
+  width: 2px; /* Adjust width to make cursor thinner or thicker */
+  height: 0.8em; /* Adjust height to match your text */
+  background-color: currentColor;
+}
