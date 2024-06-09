@@ -12,7 +12,7 @@ import {
   Avatar,
 } from "@nextui-org/react";
 
-const calculateReadingTime = (content) => {
+const calculateReadingTime = (content: string): string => {
   const wordsPerMinute = 180;
   const words = content.trim().split(/\s+/).length;
   const readingTimeMinutes = Math.ceil(words / wordsPerMinute);
@@ -33,13 +33,13 @@ export const WriteBlog = () => {
       console.error("N JWT token found");
       return;
     }
-    const uploadDate = new Date().toLocaleDateString();
+    const createdAt = new Date().toLocaleDateString();
     const readTime = calculateReadingTime(content);
 
     try {
       const response = await axios.post(
         `${BACKEND_URL}/api/v1/blog`,
-        { title, content, uploadDate, readTime, name: username.username },
+        { title, content, createdAt, readTime, name: username.username },
         {
           headers: {
             Authorization: `Bearer ${token}`,

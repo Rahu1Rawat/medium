@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "dev": "wrangler dev dist/index.ts",
+    "deploy": "wrangler deploy --minify dist/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",

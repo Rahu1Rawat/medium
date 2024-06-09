@@ -7,7 +7,10 @@ interface Blog {
   title: string;
   content: string;
   published: boolean;
+  createdAt: string;
+  readTime: string;
   authorId: string;
+  claps: number;
 }
 
 export const useBlog = ({ id }: { id: string }) => {
