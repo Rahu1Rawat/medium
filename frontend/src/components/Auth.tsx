@@ -60,8 +60,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
             placeholder="Enter your username"
             type="text"
             onChange={(e) => {
-              setSignupInputs((c) => ({
-                ...c,
+              setSignupInputs((prevState: signupInputSchema) => ({
+                ...prevState,
                 username: e.target.value,
               }));
             }}
@@ -72,8 +72,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
           placeholder="Enter your email"
           type="text"
           onChange={(e) => {
-            setSignupInputs((c) => ({
-              ...c,
+            setSignupInputs((prevState: signupInputSchema) => ({
+              ...prevState,
               email: e.target.value,
             }));
           }}
@@ -83,8 +83,8 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
           placeholder="Enter your password"
           type="password"
           onChange={(e) => {
-            setSignupInputs((c) => ({
-              ...c,
+            setSignupInputs((prevState: signupInputSchema) => ({
+              ...prevState,
               password: e.target.value,
             }));
           }}
